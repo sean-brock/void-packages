@@ -1,15 +1,18 @@
 # Template file for 'linux5.4'
 pkgname=linux5.4
-version=5.4.214
+version=5.4.219
 revision=1
-wrksrc="linux-${version}"
+wrksrc="linux-${version%.*}"
 short_desc="Linux kernel and modules (${version%.*} series)"
 maintainer="Helmut Pozimski <helmut@pozimski.eu>"
 license="GPL-2.0-only"
 homepage="https://www.kernel.org"
-distfiles="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version}.tar.xz"
-checksum=9abc79b4808c827eb82f8a44313ce6d3ade255949989bb98c11acda7ca3bc5db
+distfiles="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version%.*}.tar.xz
+ https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-${version}.xz"
+checksum="bf338980b1670bca287f9994b7441c2361907635879169c64ae78364efc5f491
+ 4949fe7f370226c4bf7abeb185f28c7bcbc8b0ea0cabe8071c7f62b1408b7a12"
 python_version=3
+skip_extraction="patch-${version}.xz"
 
 nodebug=yes  # -dbg package is generated below manually
 nostrip=yes
@@ -43,6 +46,11 @@ mutable_files="
 export KBUILD_BUILD_TIMESTAMP=${SOURCE_DATE_EPOCH:-0}
 export KBUILD_BUILD_USER=voidlinux
 export KBUILD_BUILD_HOST=voidlinux
+
+pre_patch() {
+	xzcat $XBPS_SRCDISTDIR/$pkgname-$version/patch-${version}.xz |
+		patch -sNp1 -F0
+}
 
 do_configure() {
 	# 5.4 misses Documentation/DocBook. We ship the directory from 4.12 here.
