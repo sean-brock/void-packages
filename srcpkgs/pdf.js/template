@@ -1,7 +1,8 @@
 # Template file for 'pdf.js'
 pkgname=pdf.js
+reverts="2.16.105_1"
 version=2.14.305
-revision=1
+revision=2
 create_wrksrc=yes
 short_desc="Portable Document Format (PDF) viewer built with HTML5"
 maintainer="Daniel Santana <daniel@santana.tech>"
