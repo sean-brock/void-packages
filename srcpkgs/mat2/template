@@ -1,13 +1,13 @@
 # Template file for 'mat2'
 pkgname=mat2
 version=0.13.0
-revision=1
+revision=2
 build_style=python3-module
 hostmakedepends="python3-setuptools"
 depends="bubblewrap python3-cairo python3-gobject python3-mutagen poppler-glib
  gdk-pixbuf librsvg exiftool"
 short_desc="Metadata removal tool"
-maintainer="Piraty <piraty1@inbox.ru>"
+maintainer="Piraty <mail@piraty.dev>"
 license="LGPL-3.0-or-later"
 homepage="https://0xacab.org/jvoisin/mat2"
 changelog="https://0xacab.org/jvoisin/mat2/-/raw/master/CHANGELOG.md"

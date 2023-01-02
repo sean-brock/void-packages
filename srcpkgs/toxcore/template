@@ -2,14 +2,13 @@
 pkgname=toxcore
 version=0.2.18
 revision=1
-wrksrc="c-toxcore-${version}"
 build_style=cmake
 configure_args="-DMUST_BUILD_TOXAV=ON -DBUILD_TOXAV=ON -DDHT_BOOTSTRAP=OFF
  -DBOOTSTRAP_DAEMON=ON"
 hostmakedepends="pkg-config"
 makedepends="libconfig-devel libsodium-devel libvpx-devel opus-devel"
 short_desc="Encrypted peer-to-peer instant messenger protocol library"
-maintainer="Piraty <piraty1@inbox.ru>"
+maintainer="Piraty <mail@piraty.dev>"
 license="GPL-3.0-or-later"
 homepage="https://tox.chat"
 changelog="https://raw.githubusercontent.com/TokTok/c-toxcore/master/CHANGELOG.md"

@@ -1,6 +1,6 @@
 # Template file for 'wine'
 pkgname=wine
-version=7.19
+version=7.22
 revision=1
 _pkgver=${version/r/-r}
 create_wrksrc=yes
@@ -13,8 +13,8 @@ license="LGPL-2.1-or-later"
 homepage="http://www.winehq.org/"
 distfiles="https://dl.winehq.org/wine/source/${version%.*}.x/wine-${_pkgver}.tar.xz
  https://github.com/wine-staging/wine-staging/archive/v${_pkgver}.tar.gz"
-checksum="43ac497e6e1d7fded492c32a68b554c57b76f2be8dc787e7335a0dd4e68b9d21
- 83347f27a77685f6c4b08a171a432254d93f797b1a9457276bba2ddd21c60840"
+checksum="1f2ac3b2cdf66c49bf145b43e7a3f30e6d8176d0ae498056c903fef8a6ccfc3a
+ 74104b902d2f60c019c62a15b1f475773f939aedafe05cc937d3ba89973bf00f"
 
 build_options="mingw staging xshm"
 build_options_default="mingw xshm"

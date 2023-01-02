@@ -1,8 +1,7 @@
 # Template file for 'linux6.0'
 pkgname=linux6.0
-version=6.0.2
+version=6.0.15
 revision=1
-wrksrc="linux-${version%.*}"
 short_desc="Linux kernel and modules (${version%.*} series)"
 maintainer="Đoàn Trần Công Danh <congdanhqx@gmail.com>"
 license="GPL-2.0-only"
@@ -10,7 +9,7 @@ homepage="https://www.kernel.org"
 distfiles="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version%.*}.tar.xz
  https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-${version}.xz"
 checksum="5c2443a5538de52688efb55c27ab0539c1f5eb58c0cfd16a2b9fbb08fd81788e
- a659e67693ded7c0968a10032f5b0fd9ec021ebf62d92a8fd256ae37f9b76408"
+ 8d64d2220d8a199a2d777e9af952a4ee89c58b8e4c6e45852fcfb961681ad1a9"
 skip_extraction="patch-${version}.xz"
 python_version=3
 
@@ -24,7 +23,7 @@ noshlibprovides=yes
 preserve=yes
 
 hostmakedepends="tar xz bc elfutils-devel flex gmp-devel kmod libmpc-devel
- openssl-devel perl uboot-mkimage cpio pahole python3"
+ openssl-devel perl uboot-mkimage cpio pahole python3 zstd"
 
 _kernver="${version}_${revision}"
 triggers="kernel-hooks"

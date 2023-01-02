@@ -482,7 +482,6 @@ setup_pkg() {
     DESTDIR=$XBPS_DESTDIR/$XBPS_CROSS_TRIPLET/${sourcepkg}-${version}
     PKGDESTDIR=$XBPS_DESTDIR/$XBPS_CROSS_TRIPLET/${pkg}-${version}
 
-    : ${XBPS_MAKEJOBS:=1}
     export XBPS_ORIG_MAKEJOBS=${XBPS_ORIG_MAKEJOBS:=$XBPS_MAKEJOBS}
     if [ -n "$disable_parallel_build" ]; then
         XBPS_MAKEJOBS=1
@@ -655,11 +654,7 @@ setup_pkg() {
     fi
 
     # Setup some specific package vars.
-    if [ -z "$wrksrc" ]; then
-        wrksrc="$XBPS_BUILDDIR/${sourcepkg}-${version}"
-    else
-        wrksrc="$XBPS_BUILDDIR/$wrksrc"
-    fi
+    wrksrc="$XBPS_BUILDDIR/${sourcepkg}-${version}"
 
     if [ "$cross" -a "$nocross" ]; then
         report_broken \
